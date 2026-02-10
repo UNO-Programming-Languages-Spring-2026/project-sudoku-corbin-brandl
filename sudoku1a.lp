@@ -9,5 +9,8 @@ sudoku(X,Y,N) :- initial(X,Y,N).
 %achieved translates initial filled squared to sudoku
 {sudoku(X,Y,N): N=1..n } = 1 :- X=1..n,Y=1..n.
 %achieved: fills all squares with numbers
-
+:-sudoku(X1,Y,N1),sudoku(X2,Y,N2),N1=N2,X1!=X2.
+%achieved: remove solutions with duplicate numbers in the same column
+:-sudoku(X,Y1,N1),sudoku(X,Y2,N2),N1=N2,Y1!=Y2.
+%achieved: remove solutions with duplicate numbers in the same row
 #show sudoku/3.
