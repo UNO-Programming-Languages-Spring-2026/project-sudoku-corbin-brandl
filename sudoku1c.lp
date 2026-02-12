@@ -15,5 +15,8 @@ sudoku(X,Y,N) :- initial(X,Y,N).
 %achieved: remove solutions with duplicate numbers in the same row
 subgrid(X,Y,G) :- sudoku(X,Y,_),,1+(((X-1)/S)*S+(Y-1)/S),S=2.
 %achieved: obtained subgrid for each coordinate
+:-sudoku(X1,Y1,N),sudoku(X2,Y2,N),1+(((X1-1)/S)*S+(Y1-1)/S)=1+(((X2-1)/S)*S+(Y2-1)/S),
+S=2,sudoku(X1,Y1,N)!=sudoku(X2,Y2,N).
+%achieved: remove solutions with duplicate numbers in the same subgrid
 #show sudoku/3.
 %retest
