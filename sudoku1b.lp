@@ -13,7 +13,7 @@ sudoku(X,Y,N) :- initial(X,Y,N).
 %achieved: remove solutions with duplicate numbers in the same column
 :-sudoku(X,Y1,N1),sudoku(X,Y2,N2),N1=N2,Y1!=Y2.
 %achieved: remove solutions with duplicate numbers in the same row
-subgrid(X,Y,G) :- sudoku(X,Y,_),,1+(((X-1)/S)*S+(Y-1)/S),S=2.
+subgrid(X,Y,G) :- sudoku(X,Y,_),1+(((X-1)/S)*S+(Y-1)/S),S=2.
 %achieved: obtained subgrid for each coordinate
 #show sudoku/3.
 %retest
