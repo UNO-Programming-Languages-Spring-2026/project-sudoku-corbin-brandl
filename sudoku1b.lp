@@ -13,4 +13,8 @@ sudoku(X,Y,N) :- initial(X,Y,N).
 %achieved: remove solutions with duplicate numbers in the same column
 :-sudoku(X,Y1,N1),sudoku(X,Y2,N2),N1=N2,Y1!=Y2.
 %achieved: remove solutions with duplicate numbers in the same row
+:-sudoku(X1,Y1,N),sudoku(X2,Y2,N),1+(((X1-1)/S)*S+(Y1-1)/S)=1+(((X2-1)/S)*S+(Y2-1)/S),
+S=2,sudoku(X1,Y1,N)!=sudoku(X2,Y2,N).
+%achieved: remove solutions with duplicate numbers in the same subgrid
 #show sudoku/3.
+%retest
