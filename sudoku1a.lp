@@ -17,3 +17,4 @@ sudoku(X,Y,N) :- initial(X,Y,N).
 S=2,sudoku(X1,Y1,N)!=sudoku(X2,Y2,N).
 %achieved: remove solutions with duplicate numbers in the same subgrid
 #show sudoku/3.
+%retest
